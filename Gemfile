@@ -8,5 +8,8 @@ gem 'shotgun'
 gem 'dotenv'
 gem 'mongoid'
 gem 'sinatra-initializers'
+gem 'carrierwave-mongoid'
+gem 'mini_magick'
 
+# Debugger
 gem 'byebug'
