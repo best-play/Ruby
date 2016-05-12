@@ -22,17 +22,4 @@ class ImageUploader < CarrierWave::Uploader::Base
   def cache_dir
     "tmp/#{model.id}"
   end
-
-  # Обработка картинки
-  process :resize_to_fit => [1000, 1000]
-  process :radial_blur => 5
-
-  def radial_blur amount
-    manipulate! do |img|
-      img.radial_blur amount
-      img = yield img if block_given?
-      img
-    end
-  end
-
 end

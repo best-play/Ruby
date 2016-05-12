@@ -1,6 +1,7 @@
 require './imgs'
 require 'rack/contrib'
+require 'sidekiq/web'
 
 use Rack::PostBodyContentTypeParser
 
-run Img_process
+run Rack::URLMap.new('/' => Img_process, '/sidekiq' => Sidekiq::Web)
